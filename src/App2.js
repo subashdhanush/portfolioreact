@@ -102,12 +102,14 @@ function App() {
  function About()
  {
  return(
+  <CardContent>   
  <div className='homepage'>
 <h1 id="name">Subash D: Web Developer</h1>
 <h3 class="describe">My name is Subash D and Iam a Full Stack Developer and a tenacity to adapt and learn.Iam a lif-long creative with a dedication to process and craft.
 I love working on a variety of technologies including Web Development, Mobile App Development and Deep Learning. My goal is to build highly performant applications that solve real-world problems and provide users with an awesome experience.
 </h3>
  </div>
+ </CardContent>
  );
  }
  

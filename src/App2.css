@@ -85,13 +85,20 @@ color: rgb(33 24 162);
 }
 .describe
 {
-  margin: 1rem;
+  margin: 70px;
   text-align:center;    
   word-spacing: 1px;
-  font-size: 1.8rem;
+  letter-spacing: 3px;
+  text-indent: 50px;
+  text-align: justify;
   line-height: 1.8;
+  text-align: justify;
+  text-align:center; 
+  height: 150px;
   animation:jackInTheBox;
   animation-duration: 2s;
+  text-align: center;
+  /* margin: 100px; */
 }
 #name
 {
@@ -324,8 +331,16 @@ animation-duration:2s; */
 }
 
 @media only screen and (max-width: 480px) {
-.describe {
-  font-size: 1rem;
+.describe
+{
+ /* width:100%; */
+  /* text-align: center; 
+  text-align: justify; */
+  /* width:1000px; */
+  width:768px;
+  text-align:justify;
+  margin-left :10px;
+  /* max-width: 768px; */
 }
 .homepage
 {

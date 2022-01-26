@@ -16,7 +16,6 @@ import { useState } from 'react';
 import HomeIcon from '@mui/icons-material/Home';
 import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
 // import GitHubIcon from '@mui/icons-material/GitHub';
 // import { View } from "react-native";
 
@@ -37,7 +36,7 @@ function App() {
           <Toolbar className='main-menu'>
            {/* <Stack direction={{ xs: 'row'}}  spacing={50}> */}
            {/* <Stack direction={{ xs: 'row'}}  spacing={20}>  */}
-           <Link exact to="/">
+           <Link to="/home">
      <p className="menu-link">Home</p>
    </Link>  
           <Link to="/about">
@@ -56,17 +55,17 @@ function App() {
           </Toolbar>
      </AppBar>
      <Switch>
-     <Route  exact path="/">
+     <Route  path="/home">
      <Home/>
      </Route>   
-     <Route  exact path="/about">
+     <Route  path="/about">
      <About/>
      </Route>   
-     <Route exact path="/contact">
+     <Route  path="/contact">
      {/* <Contact/> */}
      <Contact2/>
      </Route> 
-     <Route exact path="/skills">
+     <Route  path="/skills">
      <Stackk/>
      </Route> 
      </Switch>
@@ -92,8 +91,8 @@ function App() {
    return(
    <div className='name-container'>
    <h1 className='name-container1'>Hi there,</h1>
-   <h1 className='name-container2'>I'm Subash D.</h1>
-   <h3 className='name-container3'>I'm a Full-Stack Developer</h3>
+   <h1 className='name-container2'>Iam Subash D.</h1>
+   <h3 className='name-container3'>Iam a Full-Stack Developer</h3>
    {/* <button className='resumebutton'>Resume</button> */}
    <Button variant="contained" className='resumebutton' size="large">Resume</Button>
    </div>
@@ -204,14 +203,7 @@ return(
 <h2>Let me build the website you need & </h2>
 <h2>Let's build something great!</h2>
 <card className='contact-name'>
-  <div className="flex">
-  <div className="left">
-  <Name/> <Address/><Phone/>
-  </div>
-  <div className="right">
-  <Mail/><Github/>
-  </div>
-  </div>
+<Name/> <Address/><Phone/><Mail/><Github/>
 </card>
 {/* <card className="mail-container">
 </card>  */}
@@ -232,8 +224,7 @@ function Address()
 {
  return(
  <div className='add-container'>
-   {/* <HomeIcon className='homeicon'/> */}
-   <LocationOnIcon className='homeicon'/>
+   <HomeIcon className='homeicon'/>
    <h3>Usilampatti</h3>
    <h3>Madurai</h3>
  </div>
@@ -253,12 +244,7 @@ function Mail()
   return(
     <div className='mail-container'>
   <h2>Mail me for any other queries</h2>    
-  {/* <h2><MailOutlineIcon className='mailicon'/> subashdhanush1618</h2> */}
-  <h2>
-  <a href="mailto:subashdhanush1618@gmail.com" className='mailicon'>
-  <MailOutlineIcon className='mailicon'/> subashdhanush1618  
-  </a>
-  </h2> 
+  <h2><MailOutlineIcon className='mailicon'/> subashdhanush1618</h2>
     </div>
   );
 }
@@ -267,10 +253,7 @@ function Github()
   return(
     <div className='github-container'>
             <h3>See my works on Github</h3>
-      {/* <h2><GitHubIcon className="githubicon"/>   subashdhanush</h2> */}
-      <a href="https://github.com/subashdhanush" className="githubicon" target="_blank">
-      <h2><GitHubIcon className="githubicon"/>   subashdhanush</h2>   
-      </a>
+      <h2><GitHubIcon className="githubicon"/>   subashdhanush</h2>
     </div>
   );
 }

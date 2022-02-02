@@ -17,26 +17,70 @@ import HomeIcon from '@mui/icons-material/Home';
 import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
+import { Navbar, Nav, Form, FormControl, NavItem } from 'react-bootstrap';
+import Container from 'react-bootstrap/Container';
+// import { library } from '@fortawesome/fontawesome-svg-core';
+// import { faUserSecret } from '@fortawesome/free-solid-svg-icons';
+// import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import HtmlIcon from '@mui/icons-material/Html';
+
+
+
+
 // import GitHubIcon from '@mui/icons-material/GitHub';
 // import { View } from "react-native";
-
-
-
-
-
-
-
-
-
-
 
 function App() {
   return (
     <div className="App">
-          <AppBar className="app-name" style={{minHeight:"1vh"}}>
+    {/* <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavBar">
+           <span class="navbar-toggler-icon"></span>
+          </button> */}
+          <div col="row">        
+    {/* <div class="py-3 nav text-uppercase justify-content-center navbar-expand-lg"> */}
+    <div class="py-3 nav text-uppercase  navbar-expand-lg">  
+    <Nav> 
+    <Nav.Item>
+    <Nav.Link href="/home">Home</Nav.Link>
+    </Nav.Item>
+    <Nav.Item>
+    <Nav.Link href="/about">About</Nav.Link>
+    </Nav.Item>
+    <Nav.Item>
+    <Nav.Link href="/skills">Skills</Nav.Link>
+    </Nav.Item>
+    <Nav.Item>
+    <Nav.Link href="/projects"><i class="fa fa-address-book-o" aria-hidden="true"></i>
+Projects</Nav.Link>
+    </Nav.Item>
+    <Nav.Item>
+    <Nav.Link href="/contact">Contact</Nav.Link>
+    </Nav.Item>
+    {/* <Nav.Item>
+    <p><span class="text-light">Subash D</span></p>  
+    </Nav.Item> */}
+    </Nav>
+    </div>
+    <div>
+    </div>  
+      <Switch>
+       <Route exact path="/home">
+       <Home/>  
+      </Route>
+      <Route exact path="/about">
+       <About/>  
+      </Route><Route exact path="/skills">
+       <Stackk/>  
+      </Route><Route exact path="/projects">
+       {/* <Projects/>   */}
+      </Route><Route exact path="/contact">
+       <Contactnew/>  
+      </Route>
+      </Switch>
+    </div>
+ 
+          {/* <AppBar className="app-name" style={{minHeight:"1vh"}}>
           <Toolbar className='main-menu'>
-           {/* <Stack direction={{ xs: 'row'}}  spacing={50}> */}
-           {/* <Stack direction={{ xs: 'row'}}  spacing={20}>  */}
            <Link exact to="/">
      <p className="menu-link">Home</p>
    </Link>  
@@ -52,7 +96,6 @@ function App() {
    <Link to="/contact">
      <p className="menu-link">contact</p>
    </Link>
-   {/* </Stack> */}
           </Toolbar>
      </AppBar>
      <Switch>
@@ -63,51 +106,49 @@ function App() {
      <About/>
      </Route>   
      <Route exact path="/contact">
-     {/* <Contact/> */}
      <Contact2/>
      </Route> 
      <Route exact path="/skills">
      <Stackk/>
      </Route> 
-     </Switch>
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header> */}
-      {/* <Home/> */}
+     </Switch> */}
     </div>
   );
   function Home()
   {
    return(
-   <div className='name-container'>
-   <h1 className='name-container1'>Hi there,</h1>
-   <h1 className='name-container2'>I'm Subash D.</h1>
-   <h3 className='name-container3'>I'm a Full-Stack Developer</h3>
-   {/* <button className='resumebutton'>Resume</button> */}
-   <Button variant="contained" className='resumebutton' size="large">Resume</Button>
+    <div class="container py-5 text-center">
+   <div className='name-container text-center'>
+   {/* <h1 className='name-container1 fw-bold text-center text-start'>Hi there,</h1>
+   <h1 className='name-container2 fw-bold text-center text-start'>I'm Subash D.</h1>
+   <h1 className='name-container3 fw-bold text-center text-start'>I'm a Full-Stack Developer</h1> */}
+   <h1 className='name-container1 fw-bold  text-start'>Hi there,</h1>
+   <h1 className='name-container2 fw-bold  text-start'>I'm Subash D.</h1>
+   <h1 className='name-container3 fw-bold  text-start'>I'm a Full-Stack Developer</h1>
+   {/* <div class="text-center"> */}
+   <div class="text-start">  
+   <Button variant="contained" className='resumebutton'  size="large">Resume</Button>
+   {/* <Button variant="primary" size="lg" className="d-grid">Resume</Button> */}
    </div>
+   </div>
+   </div> 
    );
   }
  function About()
  {
  return(
+ <div class="container p-5 mt-5"> 
+<div class="row">
+<div class="col">
  <div className='homepage'>
-<h1 id="name">Subash D: Web Developer</h1>
+{/* <h1 id="name">Subash D: Web Developer</h1> */}
 <h3 class="describe">My name is Subash D and Iam a Full Stack Developer and a tenacity to adapt and learn.Iam a lif-long creative with a dedication to process and craft.
 I love working on a variety of technologies including Web Development, Mobile App Development and Deep Learning. My goal is to build highly performant applications that solve real-world problems and provide users with an awesome experience.
 </h3>
  </div>
+</div> 
+</div>
+</div>  
  );
  }
  
@@ -142,20 +183,32 @@ function Stackk()
    ];
 return(  
 <div className='Stack-back'>
-{/* <h2 className='tech'>Here are a few technologies that I work with:-</h2> */}
-{technologies.map((str)=>(
+{/* {technologies.map((str)=>(
   <Skills str={str}/>
-))}
-{/* <CardContent>  
-<Stack direction={{ xs: 'column', sm: 'row' }} spacing={24}>
-<h3><img src="https://yodkwtf.com/static/media/html.c1bb84e0.svg"/>HTML</h3>
-<h3><img src="https://yodkwtf.com/static/media/css.3ec32022.svg"/>CSS</h3>
-<h3><img src="https://yodkwtf.com/static/media/javascript.081325c6.svg"/>JS</h3>
-<h3><img src="https://yodkwtf.com/static/media/react.a060cbe8.svg"/>REACT</h3>
-<h3><img src="https://yodkwtf.com/static/media/node.cccdafa9.svg"/>NODE</h3>
-<h3><img src="https://yodkwtf.com/static/media/mongo.3beac5ba.svg"/>MONGO DB</h3>
-    </Stack>
-</CardContent>      */}
+))} */}
+<CardContent>  
+{/* <Stack direction={{ xs: 'column', sm: 'row' }} spacing={24}> */}
+ <div class="container skill-bg">
+ {/* <div class="container">   */}
+ {/* <div class="col-12 col-md-4"> */}
+ <div class="col py-5">      
+ <div class="row py-5 pl-5 justify-content-between">
+ {/* <div class="row">   */}
+ <div class="col-3 skill-icon"><h3><img src="https://yodkwtf.com/static/media/html.c1bb84e0.svg"/></h3></div>
+ <div class="col-3 skill-icon"><h3><img src="https://yodkwtf.com/static/media/css.3ec32022.svg"/></h3></div>
+ <div class="col-3 skill-icon"><h3><img src="https://yodkwtf.com/static/media/javascript.081325c6.svg"/></h3></div>
+ <div class="col-3 skill-icon"><h3><img src="https://yodkwtf.com/static/media/react.a060cbe8.svg"/></h3></div>
+ </div>
+ </div>
+ {/* <div class="col-12 col-md-4">   */}
+<div class="row py-5 pl-5 m-5">
+ <div class="col skill-icon"><h3><img src="https://yodkwtf.com/static/media/node.cccdafa9.svg"/></h3></div>
+ <div class="col skill-icon"><h3><img src="https://yodkwtf.com/static/media/mongo.3beac5ba.svg"/></h3></div>
+{/* </div> */}
+</div>
+</div> 
+    {/* </Stack> */}
+</CardContent>     
 {/* <h2 className='tech'>Here are a few technologies that I work with:-</h2> */}
     </div>     
 );
@@ -164,14 +217,10 @@ function Skills({str})
 {
  return(
  <div className='skill-container'>
- <card>
-  <CardContent>
-   <img className="skill-image" alt="image" src={str.image}/>
+   <img className="skill-image img-fluid" alt="image" src={str.image}/>
    {/* <h2>{str.name}</h2> */}
    {/* <h2 className='skill-name'>{str.name}</h2> */}
-  </CardContent> 
- </card>
- </div>
+   </div>
  );
 }
 function Contact()
@@ -197,7 +246,6 @@ function Contact2()
 {
 return(
 <div className='contact2-container'>
-{/* <span><h1 className='span-contact'>Contact me</h1></span> */}
 <h2 className='span-contact'>Get in Touch</h2>
 <h2>Let me build the website you need & </h2>
 <h2>Let's build something great!</h2>
@@ -211,11 +259,42 @@ return(
   </div>
   </div>
 </card>
-{/* <card className="mail-container">
-</card>  */}
-</div>
-)
+</div> 
+);
 }
+function Contactnew()
+{
+ return(
+   <div class="container py-4 font-weight mb-5">
+<div class="text-center">
+ <h2 className='span-contact'>Get in Touch</h2>
+<h2>Let me build the website you need & </h2>
+<h2>Let's build something great!</h2>
+<p class="text-center mt-5 mb-5 oppty">As of now, I'm not looking for any new job opportunities, but my inbox is always open if you want to communicate with me.</p> 
+</div>
+ <div class="row mt-5">
+ {/* <div class="col bg  p-5"> */}
+ <div class="col mb-5 contact-animation">
+<h3 class="fw-bold"><PersonIcon className='personicon2'/>Subash D</h3>
+<h3 class="fw-bold"><LocationOnIcon className='homeicon '/>Usilampatti,Madurai</h3>
+<h3 class="fw-bold"><PhoneAndroidIcon className='phoneicon '/>9787968375</h3>
+ </div>
+ {/* <div class="col bg1"><h3>Mail me for any other Queries</h3> */}
+ <div class="col bl-5 mr-5 bx fw-bolder mgh-animation"><h3 class="fw-bold work">Mail me for any other Queries</h3>
+ <a href="mailto:subashdhanush1618@gmail.com" class="text-decoration-none">
+ <h3>subashdhanush1618@gmail.com</h3>
+ </a>
+ <h3 class="fw-bold work">See my works on Github</h3>
+ <a href="https://github.com/subashdhanush" target="_blank" class="text-decoration-none">
+ <h3>subashdhanush</h3>
+ </a>
+ </div>
+ </div>
+ {/* <blockquote class="blockquote text-center mt-5 mb-5">As of now, I'm not looking for any new job opportunities, but my inbox is always open if you want to communicate with me.</blockquote> */}
+ </div>
+ );
+}
+
 function Name()
 {
  return(
